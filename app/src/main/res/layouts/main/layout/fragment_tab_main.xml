@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:item="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/mSwipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.lang.widgets.CustomScrollView
+            android:id="@+id/mScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:id="@+id/ly_register"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:background="@drawable/bk_up"
+                    android:layout_width="fill_parent"
+                    android:layout_height="180dp">
+                    <LinearLayout
+                        android:background="@drawable/tab_list_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/tv_product1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="登录"
+                            android:textColor="@color/white"
+                            android:padding="5dp"/>
+                        <View android:id="@+id/border1"
+                            android:background="@color/white"
+                            android:layout_width="1.0dip"
+                            android:layout_height="12dip"
+                            android:layout_marginLeft="-1.0dip" />
+                        <TextView
+                            android:id="@+id/tv_product2"
+                            android:text="注册"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/white"
+                            android:padding="5dp"/>
+
+                    </LinearLayout>
+                </LinearLayout>
+                <com.lang.widgets.banner.BannerView
+                    android:id="@+id/mBannerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="10dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="新手专享"
+                    android:layout_margin="@dimen/x20"
+                    android:textSize="@dimen/x40"/>
+                <View
+                    style="@style/Divider"/>
+                <com.lang.qfd.ui.main.view.ChoiceProductLinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true">
+                </com.lang.qfd.ui.main.view.ChoiceProductLinearLayout>
+                <com.lang.widgets.SimpleListItem
+                    android:id="@+id/item_pwdAgain"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/y30"
+                    item:titleText="精选理财"
+                    item:titleTxtSize="@dimen/x40"
+                    item:contentText="查看全部产品"
+                    item:arrowDisplay="true"
+                    item:bottomLine="SOLID"/>
+                <com.lang.qfd.ui.main.view.ChoiceProductLinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"/>
+                <com.lang.qfd.ui.main.view.ChoiceProductLinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"/>
+                <com.lang.qfd.ui.main.view.ChoiceProductLinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"/>
+                <com.lang.qfd.ui.main.view.ChoiceProductLinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"/>
+                <com.lang.qfd.ui.main.view.ChoiceProductLinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"/>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/mRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="132dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:background="@color/red_light"/>
+
+            </LinearLayout>
+        </com.lang.widgets.CustomScrollView>
+    </android.support.v4.widget.SwipeRefreshLayout>
+    <include layout="@layout/base_toolbar"/>
+</RelativeLayout>
+
+

@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">lang</string>
+    <string name="welcome_tips">欢迎欣赏\n\n cycloid</string>
+    <string name="title_framework_main">快速搭建项目(MD版)</string>
+    <string name="title_recycler_activity">我在Activity</string>
+    <string name="title_recycler_fragment">我在Fragment</string>
+    <string name="title_recycler_section_activity">SectionRecyclerActivity</string>
+    <string name="title_recycler_section_fragment">SectionRecyclerFragment</string>
+
+    <string name="home_tab_news">新闻</string>
+    <string name="home_tab_read">阅读</string>
+    <string name="home_tab_audio">试听</string>
+    <string name="home_tab_topic">话题</string>
+    <string name="home_tab_main">今日</string>
+    <string name="home_tab_invest">理财</string>
+    <string name="home_tab_profile">我的</string>
+    <string name="home_tab_test">测试</string>
+</resources>

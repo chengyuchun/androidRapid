@@ -1,0 +1,25 @@
+<resources>
+
+
+    <style name="ToolBarStyle" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:layout_width">match_parent</item>
+        <!--<item name="android:layout_height">?attr/actionBarSize</item>-->
+        <item name="android:layout_height">45dp</item>
+        <item name="android:minHeight">45dp</item>
+        <item name="android:background">@drawable/bk_up</item>
+        <item name="android:theme">@style/PopWindowStyle</item>
+    </style>
+
+    <style name="PopWindowStyle" parent="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="android:colorBackground">@color/white</item>
+        <item name="android:textColorPrimary">@color/grey</item>
+    </style>
+
+    <style name="base_SwipeBackLayout">
+        <item name="base_edge_size">50dip</item>
+        <item name="base_shadow_left">@drawable/base_shadow_left</item>
+        <item name="base_shadow_right">@drawable/base_shadow_right</item>
+        <item name="base_shadow_bottom">@drawable/base_shadow_bottom</item>
+    </style>
+
+</resources>

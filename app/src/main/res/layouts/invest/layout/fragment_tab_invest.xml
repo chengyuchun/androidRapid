@@ -1,0 +1,80 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ly_type"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:background="@drawable/bk_up"
+        android:layout_width="fill_parent"
+        android:layout_height="48.0dip">
+        <LinearLayout
+            android:background="@drawable/tab_list_title"
+            android:layout_width="wrap_content"
+            android:layout_height="27.0dip">
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <RadioButton
+                    android:id="@+id/tv_product1"
+                    android:text="活期"
+                    style="@style/InvestTabButton"/>
+                <View android:id="@+id/border1"
+                    android:background="@color/white"
+                    android:layout_width="1.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="-1.0dip" />
+                <RadioButton
+                    android:id="@+id/tv_product2"
+                    android:text="短期"
+                    style="@style/InvestTabButton"/>
+                <View android:id="@+id/border2"
+                    android:background="@color/white"
+                    android:layout_width="1.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="-1.0dip" />
+                <RadioButton
+                    android:id="@+id/tv_product3"
+                    android:text="中长期"
+                    style="@style/InvestTabButton"/>
+            </RadioGroup>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!--<android.support.v4.widget.SwipeRefreshLayout-->
+        <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--&gt;-->
+        <com.lang.widgets.StickyNavLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <RelativeLayout
+                android:id="@+id/id_stickynavlayout_topview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#4400ff00" >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:gravity="center"
+                    android:text="一路向钱"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <com.lang.widgets.PinnedHeaderListView
+                android:id="@+id/contact_listview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="none">
+
+            </com.lang.widgets.PinnedHeaderListView>
+
+        </com.lang.widgets.StickyNavLayout>
+    <!--</android.support.v4.widget.SwipeRefreshLayout>-->
+
+</LinearLayout>

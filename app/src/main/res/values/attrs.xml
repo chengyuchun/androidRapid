@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <declare-styleable name="SimpleListItem">
+        <attr name="topLine">
+            <enum name="NONE" value="0" />
+            <enum name="DOT" value="1" />
+            <enum name="SOLID" value="2" />
+        </attr>
+        <attr name="bottomLine">
+            <enum name="NONE" value="0" />
+            <enum name="DOT" value="1" />
+            <enum name="SOLID" value="2" />
+        </attr>
+
+        <attr name="titleText" format="string" />
+        <attr name="titleColor" format="color" />
+        <attr name="titleDisplay" format="boolean" />
+
+        <attr name="contentText" format="string" />
+        <attr name="contentColor" format="color" />
+        <attr name="contentDisplay" format="boolean" />
+
+        <attr name="arrowDisplay" format="boolean" />
+
+        <attr name="itemIcon" format="reference" />
+
+        <attr name="etHint" format="string" />
+        <attr name="etDisplay" format="boolean" />
+
+        <attr name="titleTxtSize" format="dimension" />
+        <attr name="etTxtSize" format="dimension" />
+        <attr name="contentTxtSize" format="dimension" />
+        <attr name="deleteDisplay" format="boolean" />
+
+        <attr name="titleLeftSpaceExtra" format="dimension" />
+    </declare-styleable>
+
+</resources>

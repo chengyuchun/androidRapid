@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="app_primary_dark_color">#45b9de</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="tab_gray">#ff999999</color>
+    <color name="tab_green">#ff45c01a</color>
+    <color name="grey">#808080</color>
+    <color name="widgets_general_tab_pressed">#0db35e</color>
+    <color name="widgets_general_tab_normal">#aaa</color>
+    <color name="app_primary_color">#80c3db</color>
+
+    <color name="blue_light">#0096f4</color>
+    <color name="blue">#4285f4</color>
+    <color name="gray_f9">#f9f9f9</color>
+    <color name="gray_divide">#dbdfe8</color>
+    <color name="title_txt">#222222</color>
+    <color name="content_txt">#999999</color>
+    <color name="orange">#ef5a50</color>
+    <color name="gray_bg">#f5f7fa</color>
+    <color name="gray_99">#999999</color>
+    <color name="red_light">#fc675e</color>
+    <color name="gray_f6">#f6f6f6</color>
+</resources>

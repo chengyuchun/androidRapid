@@ -1,0 +1,63 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/blue</item>
+        <item name="colorPrimaryDark">@color/blue</item>
+        <item name="android:textSize">@dimen/x26</item>
+        <item name="android:textColor">@color/title_txt</item>
+        <item name="android:windowBackground">@color/gray_bg</item>
+        <item name="android:textColorHint">@color/gray_99</item>
+        <item name="colorAccent">@color/blue</item>
+    </style>
+
+    <style name="Theme.MaterialDesign" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/app_primary_color</item>
+        <item name="colorPrimaryDark">@color/app_primary_dark_color</item>
+        <item name="colorAccent">@color/app_primary_color</item>
+        <item name="android:textSize">@dimen/x30</item>
+        <item name="android:windowBackground">@color/white</item>
+    </style>
+
+    <style name="ToolBarStyle" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:layout_width">match_parent</item>
+        <!--<item name="android:layout_height">?attr/actionBarSize</item>-->
+        <item name="android:layout_height">45dp</item>
+        <item name="android:minHeight">45dp</item>
+        <item name="android:background">@drawable/bk_up</item>
+        <item name="android:theme">@style/PopWindowStyle</item>
+    </style>
+
+    <style name="PopWindowStyle" parent="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="android:colorBackground">@color/white</item>
+        <item name="android:textColorPrimary">@color/grey</item>
+    </style>
+
+    <style name="RecyclerViewStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:overScrollMode">never</item>
+        <item name="android:fadingEdge">none</item>
+        <item name="android:scrollbars">none</item>
+    </style>
+
+    <style name="RecyclerItemViewStyle">
+        <item name="android:background">?android:attr/selectableItemBackground</item>
+    </style>
+
+    <style name="InvestTabButton">
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/selector_click</item>
+        <item name="android:textSize">14.0dip</item>
+        <item name="android:layout_width">87.0dip</item>
+        <item name="android:layout_height">27.0dip</item>
+        <item name="android:button">@null</item>
+        <item name="android:textColor">@color/tab_invest_selected_text_bg</item>
+    </style>
+    <style name="Divider">
+        <item name="android:layout_height">@dimen/y1</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:background">@color/gray_divide</item>
+    </style>
+</resources>

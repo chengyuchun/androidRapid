@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/sort_key_layout"
+	android:layout_width="fill_parent"
+	android:layout_height="@dimen/y80"
+	android:gravity="center_vertical"
+	android:orientation="horizontal"
+	android:background="@color/white">
+	<ImageView
+		android:id="@+id/img_sort"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:src="@drawable/product_list_current"
+		android:paddingLeft="@dimen/x30"
+		android:paddingRight="@dimen/x30"/>
+
+	<TextView
+		android:id="@+id/sort_key_title"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center"
+		android:text="免费随时领取"/>
+</LinearLayout>
