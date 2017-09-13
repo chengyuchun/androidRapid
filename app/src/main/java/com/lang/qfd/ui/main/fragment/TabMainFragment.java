@@ -8,15 +8,15 @@ import com.framework.http.DefaultTransformer;
 import com.lang.R;
 import com.lang.core.ITabFragment;
 import com.lang.core.http.JsonApiWrapper;
-import com.lang.core.http.ProtoApiWrapper;
 import com.lang.core.subscribers.ProgressSubscriber;
 import com.lang.qfd.model.BaseModel;
 import com.lang.qfd.model.Benefit;
 import com.lang.qfd.ui.demo.HomeActivity;
 import com.lang.qfd.ui.main.delegate.TabMainDelegate;
 import com.lang.widgets.banner.BannerView;
-import com.yingu.jr.mobile.protos.IndexProtos;
+
 import java.util.ArrayList;
+
 import rx.functions.Func1;
 
 /**
@@ -76,19 +76,16 @@ public class TabMainFragment extends BaseFragmentPresenter<TabMainDelegate> impl
                 });
     }
 
-    /**
-        取protobuffer格式数据
-    */
-    private void refreshTopBanner(){
+    private void refreshTopBanner() {
         final BannerView bannerView = viewDelegate.get(R.id.mBannerView);
-        ProtoApiWrapper.serviceQfd().getTopBanner()
-                .compose(new DefaultTransformer<IndexProtos.TopBannerList>()) //取网络数据这个函数不能少，这是线程切换
-                .map(new Func1<IndexProtos.TopBannerList, ArrayList<BannerView.Banner>>() {
+        JsonApiWrapper.serviceFu().rxBenefits(3, 1)
+                .compose(new DefaultTransformer<BaseModel<ArrayList<Benefit>>>())  //取网络数据这个函数不能少，这是线程切换
+                .map(new Func1<BaseModel<ArrayList<Benefit>>, ArrayList<BannerView.Banner>>() {
                     @Override
-                    public ArrayList<BannerView.Banner> call(IndexProtos.TopBannerList topBannerList) {
+                    public ArrayList<BannerView.Banner> call(BaseModel<ArrayList<Benefit>> arrayListBaseModel) {
                         ArrayList<BannerView.Banner> banners = new ArrayList<>();
-                        for(IndexProtos.TopBannerList.TopBanner topBanner:topBannerList.getBannersList()){
-                            banners.add(new BannerView.Banner(topBanner.getImgUrl()));
+                        for(Benefit topBanner:arrayListBaseModel.results){
+                            banners.add(new BannerView.Banner(topBanner.url));
                         }
                         return banners;
                     }
@@ -105,6 +102,35 @@ public class TabMainFragment extends BaseFragmentPresenter<TabMainDelegate> impl
                     }
                 });
     }
+    /**
+        取protobuffer格式数据
+    */
+//    private void refreshTopBanner(){
+//        final BannerView bannerView = viewDelegate.get(R.id.mBannerView);
+//        ProtoApiWrapper.serviceQfd().getTopBanner()
+//                .compose(new DefaultTransformer<IndexProtos.TopBannerList>()) //取网络数据这个函数不能少，这是线程切换
+//                .map(new Func1<IndexProtos.TopBannerList, ArrayList<BannerView.Banner>>() {
+//                    @Override
+//                    public ArrayList<BannerView.Banner> call(IndexProtos.TopBannerList topBannerList) {
+//                        ArrayList<BannerView.Banner> banners = new ArrayList<>();
+//                        for(IndexProtos.TopBannerList.TopBanner topBanner:topBannerList.getBannersList()){
+//                            banners.add(new BannerView.Banner(topBanner.getImgUrl()));
+//                        }
+//                        return banners;
+//                    }
+//                })
+//                .subscribe(new ProgressSubscriber<ArrayList<BannerView.Banner>>(getContext(),false) {
+//                    @Override
+//                    public void onNext(ArrayList<BannerView.Banner> banners) {
+//                        bannerView.setUpData(banners, new BannerView.OnBannerItemClickListener(){
+//                            @Override
+//                            public void onBannerClick(int index, BannerView.Banner banner) {
+//
+//                            }
+//                        });
+//                    }
+//                });
+//    }
 
     @Override
     public void onHiddenChanged(boolean hidden) {

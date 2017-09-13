@@ -1,13 +1,12 @@
-<resources>
-
-
+<resources xmlns:tools="http://schemas.android.com/tools">
     <style name="ToolBarStyle" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:layout_width">match_parent</item>
         <!--<item name="android:layout_height">?attr/actionBarSize</item>-->
         <item name="android:layout_height">45dp</item>
         <item name="android:minHeight">45dp</item>
-        <item name="android:background">@drawable/bk_up</item>
-        <item name="android:theme">@style/PopWindowStyle</item>
+        <!--<item name="android:background">@drawable/bk_up</item>-->
+        <item name="android:background">@color/white</item>
+        <!--<item name="android:theme">@style/PopWindowStyle</item>-->
     </style>
 
     <style name="PopWindowStyle" parent="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
@@ -22,4 +21,22 @@
         <item name="base_shadow_bottom">@drawable/base_shadow_bottom</item>
     </style>
 
+    <style name="base_backAppTheme" parent="AppTheme">
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar" tools:ignore="ResourceName">
+
+    </style>
+
+    <style name="dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
 </resources>

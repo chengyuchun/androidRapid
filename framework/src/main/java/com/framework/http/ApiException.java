@@ -5,6 +5,7 @@ public class ApiException extends RuntimeException {
     private static int errorCode;
     public static final int USER_NOT_EXIST = 100;
     public static final int WRONG_PASSWORD = 101;
+    public static final int USER_EXPIRE = 403;
 
     public ApiException(int resultCode) {
         this(getApiExceptionMessage(resultCode,""));
@@ -35,6 +36,8 @@ public class ApiException extends RuntimeException {
             case WRONG_PASSWORD:
                 message = "密码错误";
                 break;
+            case USER_EXPIRE:
+                message = "登录已过期，请重新登录";
             default:
                 message = defaultMsg;
 

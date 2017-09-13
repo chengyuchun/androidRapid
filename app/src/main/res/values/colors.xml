@@ -25,4 +25,6 @@
     <color name="gray_99">#999999</color>
     <color name="red_light">#fc675e</color>
     <color name="gray_f6">#f6f6f6</color>
+    <color name="gray_cc">#cccccc</color>
+    <color name="blue_3190E8">#4285f4</color>
 </resources>

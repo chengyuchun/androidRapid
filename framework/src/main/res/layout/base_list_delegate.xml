@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent"
-             android:background="@android:color/white"
-             android:orientation="vertical">
-
-	<com.jcodecraeer.xrecyclerview.XRecyclerView
-		android:id="@+id/MyRecyclerView"
+<com.framework.widget.PtrlMeiTuanFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/rotate_header_web_view_frame"
+	android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+	<RelativeLayout
 		android:layout_width="match_parent"
-		android:layout_height="match_parent">
-	</com.jcodecraeer.xrecyclerview.XRecyclerView>
-
+		android:layout_height="match_parent"
+		android:orientation="vertical">
+		<com.jcodecraeer.xrecyclerview.XRecyclerView
+			android:id="@+id/MyRecyclerView"
+			android:layout_width="match_parent"
+			android:layout_centerHorizontal="true"
+			android:layout_height="match_parent">
+		</com.jcodecraeer.xrecyclerview.XRecyclerView>
+	</RelativeLayout>
 	<!--<FrameLayout-->
 		<!--android:id="@+id/emptyLayoutParent"-->
 		<!--android:layout_width="match_parent"-->
 		<!--android:layout_height="match_parent"/>-->
 
-</FrameLayout>
+</com.framework.widget.PtrlMeiTuanFrameLayout>

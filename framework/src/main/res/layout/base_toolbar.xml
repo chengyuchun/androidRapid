@@ -1,40 +1,64 @@
 <android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/toolbar"
     style="@style/ToolBarStyle">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:id="@+id/ll_left"
+            android:layout_width="50dp"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_height="50dp">
+            <TextView
+                android:id="@+id/toolbar_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:textSize="16sp"
+                android:text="" />
+        </LinearLayout>
 
-    <TextView
-        android:id="@+id/toolbar_left"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="left"
-        android:ellipsize="end"
-        android:singleLine="true"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        android:text="left" />
 
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textSize="18sp"
+            android:text="center" />
 
-    <TextView
-        android:id="@+id/toolbar_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:ellipsize="end"
-        android:singleLine="true"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        android:text="center" />
+        <TextView
+            android:id="@+id/toolbar_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textSize="16sp"
+            android:text=""
+            android:paddingRight="10dp"/>
 
-    <TextView
-        android:id="@+id/toolbar_right"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="right"
-        android:ellipsize="end"
-        android:singleLine="true"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        android:text="right"
-        android:paddingRight="10dp" />
+        <LinearLayout
+            android:id="@+id/ll_right"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:gravity="center"
+            android:visibility="gone">
+            <ImageView
+                android:id="@+id/toolbar_right_img"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/jsq"/>
 
+        </LinearLayout>
+
+    </RelativeLayout>
 </android.support.v7.widget.Toolbar>

@@ -3,10 +3,10 @@ package com.lang.qfd.ui.demo;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.RecyclerView;
 import android.widget.ImageView;
-import android.widget.Toast;
-import com.framework.fragment.BaseListFragment;
+
 import com.framework.http.DefaultTransformer;
 import com.lang.R;
+import com.lang.core.BaseListFragment;
 import com.lang.core.ITabFragment;
 import com.lang.core.http.JsonApiWrapper;
 import com.lang.core.subscribers.ProgressSubscriber;
@@ -16,15 +16,18 @@ import com.lang.utils.GlideUtil;
 import com.zhy.adapter.recyclerview.CommonAdapter;
 import com.zhy.adapter.recyclerview.MultiItemTypeAdapter;
 import com.zhy.adapter.recyclerview.base.ViewHolder;
+
 import java.util.ArrayList;
 
 /**
  * Created by chengyuchun on 2017/3/7.
+ *
+ * 列表页的写法
+ * 继承BaseListFragment，实现getAdapter、loadData方法即可
+ * 实现接口ITabFragment不是必要的，只有当这个fragment是tabfragment的时候才需要实现这个接口
  */
 
 public class DemoListFragment extends BaseListFragment implements ITabFragment {
-    private ArrayList<Benefit> mArrayList = new ArrayList<Benefit>();
-    private int mPage=1;
     @Override
     protected RecyclerView.LayoutManager getLayoutManager() {
         //默认是LinearLayoutManager，可以根据需要更改
@@ -32,7 +35,7 @@ public class DemoListFragment extends BaseListFragment implements ITabFragment {
     }
 
     protected MultiItemTypeAdapter getAdapter(){
-        return new CommonAdapter<Benefit>(getActivity(),R.layout.fragment_fu_list_item,mArrayList) {
+        return new CommonAdapter<Benefit>(getActivity(),R.layout.fragment_fu_list_item,new ArrayList<Benefit>()) {
             @Override
             protected void convert(ViewHolder holder, Benefit benefit, int position) {
                 GlideUtil.displayImg((ImageView) holder.getView(R.id.mSampleListItemImg),benefit.url);
@@ -40,17 +43,6 @@ public class DemoListFragment extends BaseListFragment implements ITabFragment {
         };
     }
 
-    public void onRefresh(){
-        mPage = 1;
-        loadData();
-    }
-
-    public void onLoadMore(){
-        mPage ++;
-        if(mArrayList.size()==0)
-            Toast.makeText(getActivity(),"没有可加载的数据",Toast.LENGTH_SHORT).show();
-        loadData();
-    }
 
     @Override
     protected void loadData(){
@@ -59,7 +51,10 @@ public class DemoListFragment extends BaseListFragment implements ITabFragment {
                 .subscribe(new ProgressSubscriber<BaseModel<ArrayList<Benefit>>>(getContext(),false) {
                     @Override
                     public void onNext(BaseModel<ArrayList<Benefit>> arrayListBaseModel) {
-                        mArrayList = arrayListBaseModel.results;
+                        //刷新
+                        if(mAction == Action.REFRESH){
+                            clearData();
+                        }
                         refreshData(arrayListBaseModel.results);
                     }
                 });

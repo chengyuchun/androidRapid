@@ -15,4 +15,6 @@
     <string name="home_tab_invest">理财</string>
     <string name="home_tab_profile">我的</string>
     <string name="home_tab_test">测试</string>
+    <string name="reload_text">点击屏幕重新加载</string>
+    <string name="claims_empty_text">暂无记录</string>
 </resources>

@@ -26,11 +26,14 @@ final class CustomProtoResponseBodyConverter<T extends MessageLite>
         try {
             CommunicationProtos.Result result = CommunicationProtos.Result.parseFrom(value.byteStream());
             CommunicationProtos.Result.Status resultStatus = result.getStatus();
+            //此处根据业务状态抛异常
+
             return parser.parseFrom(result.getData());
         } catch (InvalidProtocolBufferException e) {
             throw new RuntimeException(e); // Despite extending IOException, this is data mismatch.
         } finally {
             value.close();
+            //throw new ApiException(101);
         }
     }
 }

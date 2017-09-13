@@ -3,15 +3,14 @@ package com.framework.activity.backactivity;
 import android.os.Bundle;
 import android.view.View;
 
-import com.framework.activity.BaseFrameActivity;
+import com.kymjs.frame.presenter.ActivityPresenter;
 import com.kymjs.frame.view.IDelegate;
-import com.framework.R;
 /**
  * 侧滑finish的Activity基类
  *
  * @author kymjs (http://www.kymjs.com/) on 11/6/15.
  */
-public abstract class BaseBackActivity<T extends IDelegate> extends BaseFrameActivity<T> {
+public abstract class BaseBackActivity<T extends IDelegate> extends ActivityPresenter<T> {
     private BackActivityHelper mHelper;
 
     @Override

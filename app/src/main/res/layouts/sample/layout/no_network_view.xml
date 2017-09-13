@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_empty_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+    <ImageView
+        android:layout_marginTop="@dimen/y264"
+        android:id="@+id/empty_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/no_network"
+        android:scaleType="centerInside"
+        android:layout_gravity="center" />
+    <TextView
+        android:id="@+id/empty_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="网络异常，请检查您的网络"
+        android:textColor="@color/gray_cc"
+        android:layout_below="@+id/empty_view"
+        android:textSize="@dimen/x36"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="@dimen/y60"
+        />
+
+    <TextView
+        android:id="@+id/tv_reload"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/reload_text"
+        android:textColor="@color/blue_3190E8"
+        android:layout_below="@+id/empty_text"
+        android:textSize="@dimen/x36"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="@dimen/y30" />
+</RelativeLayout>

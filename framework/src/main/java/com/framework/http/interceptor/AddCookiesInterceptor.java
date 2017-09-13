@@ -27,13 +27,15 @@ public class AddCookiesInterceptor implements Interceptor {
     public Response intercept(Chain chain) throws IOException {
 
         final Request.Builder builder = chain.request().newBuilder();
-        SharedPreferences sharedPreferences = context.getSharedPreferences("cookie", Context.MODE_PRIVATE);
-        Observable.just(sharedPreferences.getString("cookie", ""))
+        SharedPreferences sharedPreferences = context.getSharedPreferences("access_token", Context.MODE_PRIVATE);
+        Observable.just(sharedPreferences.getString("access_token", ""))
         .subscribe(new Action1<String>() {
             @Override
-            public void call(String cookie) {
+            public void call(String access_token) {
                 //添加cookie
-                builder.addHeader("Cookie", cookie);
+                builder.addHeader("Authorization", access_token);
+                builder.addHeader("User-Agent", "mobile");
+                builder.addHeader("Test", access_token);
             }
         });
         return chain.proceed(builder.build());

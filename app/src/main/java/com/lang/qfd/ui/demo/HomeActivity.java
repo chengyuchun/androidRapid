@@ -1,9 +1,8 @@
 package com.lang.qfd.ui.demo;
 
 import android.os.Bundle;
-
-import com.framework.activity.BaseActivityPresenter;
 import com.lang.R;
+import com.lang.core.BaseActivityPresenter;
 import com.lang.core.ITabFragment;
 import com.lang.qfd.ui.invest.fragment.TabInvestFragment;
 import com.lang.qfd.ui.main.fragment.TabMainFragment;
@@ -28,6 +27,7 @@ public class HomeActivity extends BaseActivityPresenter<HomeDelegate> implements
         tabs.add(new TabLayout.Tab(R.drawable.selector_tab_contact, R.string.home_tab_main, TabMainFragment.class));
         tabs.add(new TabLayout.Tab(R.drawable.selector_tab_moments, R.string.home_tab_invest, TabInvestFragment.class));
         tabs.add(new TabLayout.Tab(R.drawable.selector_tab_profile, R.string.home_tab_profile, DemoListFragment.class));
+        tabs.add(new TabLayout.Tab(R.drawable.selector_tab_profile, R.string.home_tab_profile, DemoViewPageFragment.class));
         viewDelegate.setTabs(tabs,this);
     }
 
