@@ -1,7 +1,7 @@
 package com.lang.qfd.ui.main.fragment;
 
 import android.support.v4.app.Fragment;
-import android.support.v4.widget.SwipeRefreshLayout;
+import android.view.View;
 
 import com.framework.fragment.BaseFragmentPresenter;
 import com.framework.http.DefaultTransformer;
@@ -11,12 +11,13 @@ import com.lang.core.http.JsonApiWrapper;
 import com.lang.core.subscribers.ProgressSubscriber;
 import com.lang.qfd.model.BaseModel;
 import com.lang.qfd.model.Benefit;
-import com.lang.qfd.ui.demo.HomeActivity;
 import com.lang.qfd.ui.main.delegate.TabMainDelegate;
 import com.lang.widgets.banner.BannerView;
 
 import java.util.ArrayList;
 
+import in.srain.cube.views.ptr.PtrFrameLayout;
+import in.srain.cube.views.ptr.PtrHandler;
 import rx.functions.Func1;
 
 /**
@@ -46,20 +47,48 @@ public class TabMainFragment extends BaseFragmentPresenter<TabMainDelegate> impl
     @Override
     protected void bindEvenListener() {
         super.bindEvenListener();
-        ((HomeActivity)getActivity()).hiddenToolBar();
+        viewDelegate.setTitle("首页");
         viewDelegate.setRecyOrientation();
-        refreshFuData();
-        refreshTopBanner();
 
-        final SwipeRefreshLayout swipeRefreshLayout = viewDelegate.get(R.id.mSwipeRefreshLayout);
-        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+        final PtrFrameLayout mPtrFrame = viewDelegate.get(R.id.rotate_header_web_view_frame);
+        mPtrFrame.setEnabled(false);
+
+//        mPtrFrame.setLastUpdateTimeRelateObject(this);
+        mPtrFrame.setPtrHandler(new PtrHandler() {
             @Override
-            public void onRefresh() {
+            public boolean checkCanDoRefresh(PtrFrameLayout frame, View content, View header) {
+                //return PtrDefaultHandler.checkContentCanBePulledDown(frame, mScrollView, header);
+                return true;
+            }
+
+            @Override
+            public void onRefreshBegin(PtrFrameLayout frame) {
                 refreshFuData();
                 refreshTopBanner();
-                swipeRefreshLayout.setRefreshing(false);
+                mPtrFrame.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        mPtrFrame.refreshComplete();
+                    }
+                }, 500);
             }
         });
+
+        // the following are default settings
+//        mPtrFrame.setResistance(1.7f);
+//        mPtrFrame.setRatioOfHeaderHeightToRefresh(1.2f);
+//        mPtrFrame.setDurationToClose(200);
+//        mPtrFrame.setDurationToCloseHeader(1000);
+//        // default is false
+//        mPtrFrame.setPullToRefresh(false);
+//        // default is true
+//        mPtrFrame.setKeepHeaderWhenRefresh(true);
+        mPtrFrame.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                mPtrFrame.autoRefresh();
+            }
+        }, 100);
     }
 
     /**
@@ -102,6 +131,8 @@ public class TabMainFragment extends BaseFragmentPresenter<TabMainDelegate> impl
                     }
                 });
     }
+
+
     /**
         取protobuffer格式数据
     */
@@ -132,10 +163,4 @@ public class TabMainFragment extends BaseFragmentPresenter<TabMainDelegate> impl
 //                });
 //    }
 
-    @Override
-    public void onHiddenChanged(boolean hidden) {
-        super.onHiddenChanged(hidden);
-        if(!hidden)
-            ((HomeActivity)getActivity()).hiddenToolBar();
-    }
 }

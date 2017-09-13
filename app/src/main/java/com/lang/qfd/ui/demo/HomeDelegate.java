@@ -1,9 +1,5 @@
 package com.lang.qfd.ui.demo;
 
-import android.support.v7.widget.Toolbar;
-import android.view.View;
-import android.widget.TextView;
-
 import com.kymjs.frame.view.AppDelegate;
 import com.lang.R;
 import com.lang.widgets.tab.TabLayout;
@@ -27,18 +23,8 @@ public class HomeDelegate extends AppDelegate  {
         tabLayout.setCurrentTab(0);
     }
 
-    public void setTitle(String s){
-        Toolbar toolbar = get(R.id.toolbar);
-        TextView titleView = get(R.id.toolbar_title);
-        titleView.setText(s);
+    public void setCurrentPage(int pageCode){
+        TabLayout tabLayout = get(R.id.mTabLayout);
+        tabLayout.setCurrentTab(pageCode);
     }
-
-    public void showToolBar(){
-        get(R.id.toolbar).setVisibility(View.VISIBLE);
-    }
-
-    public void hiddenToolBar(){
-        get(R.id.toolbar).setVisibility(View.GONE);
-    }
-
 }

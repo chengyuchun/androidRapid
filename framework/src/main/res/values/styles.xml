@@ -27,7 +27,14 @@
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar" tools:ignore="ResourceName">
-
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimaryDark">@color/white</item>
+        <item name="android:textSize">@dimen/x26</item>
+        <item name="android:textColor">@color/content_txt</item>
+        <item name="android:windowBackground">@color/gray_bg</item>
+        <item name="android:textColorHint">@color/gray_99</item>
+        <item name="colorAccent">@color/white</item>
     </style>
 
     <style name="dialog" parent="@android:style/Theme.Dialog">

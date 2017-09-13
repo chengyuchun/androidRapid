@@ -115,7 +115,8 @@ public class BannerView extends RelativeLayout implements ViewPager.OnPageChange
             final Banner banner = banners.get(index);
             final ImageView imageView = new ImageView(getContext());
             //imageView.setImageResource(banner.resId);
-            GlideUtil.displayImg(imageView,"https:"+banner.url);
+            //GlideUtil.displayImg(imageView,"https:"+banner.url);
+            GlideUtil.displayImg(imageView,banner.url);
             imageView.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {

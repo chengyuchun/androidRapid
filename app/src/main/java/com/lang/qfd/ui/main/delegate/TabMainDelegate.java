@@ -3,9 +3,10 @@ package com.lang.qfd.ui.main.delegate;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
+
 import com.kymjs.frame.view.AppDelegate;
 import com.lang.R;
 import com.lang.qfd.model.Benefit;
@@ -33,8 +34,7 @@ public class TabMainDelegate extends AppDelegate implements ScrollViewListener {
     public void initWidget() {
         CustomScrollView customScrollView = get(R.id.mScrollView);
         customScrollView.setScrollViewListener(this);
-        getToolbar().setAlpha(0);
-        initToolbar();
+        getBarView().setAlpha(0f);
     }
 
     public void refreshRecyclerViewData(List<Benefit> list){
@@ -63,31 +63,35 @@ public class TabMainDelegate extends AppDelegate implements ScrollViewListener {
         recyclerView.setLayoutManager(layoutManager);
     }
 
+    private View getBarView(){
+        return get(R.id.ll_bar);
+    }
+
+    public void setTitle(String s){
+        ((TextView)get(R.id.toolbar_title)).setText(s);
+    }
+
     @Override
     public Toolbar getToolbar() {
         return get(R.id.toolbar);
     }
 
-    private void initToolbar(){
-        ((TextView)get(R.id.toolbar_left)).setText("注册");
-        ((TextView)get(R.id.toolbar_right)).setText("登录");
-    }
 
     @Override
     public void onScrollChanged(CustomScrollView scrollView, int x, int y, int oldx, int oldy) {
-
-        LinearLayout lyRegister = get(R.id.ly_register);
-        int height = lyRegister.getMeasuredHeight()-getToolbar().getMeasuredHeight();
+        get(R.id.rotate_header_web_view_frame).setEnabled(scrollView.getScrollY()==0);
+        View view = get(R.id.mBannerView);
+        int height = view.getMeasuredHeight()-getBarView().getMeasuredHeight();
         if(height > 0 && height>=y){
             float alpha = (float)y/(float)height;
-            getToolbar().setAlpha(alpha);
+            getBarView().setAlpha(alpha);
             L.d("alpha:"+alpha);
             // mToolbar.setAlpha((int) (alpha * 255));
             // 通知标题栏刷新显示
-            getToolbar().invalidate();
+            getBarView().invalidate();
         }else {
-            getToolbar().setAlpha(1f);
-            getToolbar().invalidate();
+            getBarView().setAlpha(1f);
+            getBarView().invalidate();
         }
     }
 }

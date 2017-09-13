@@ -14,9 +14,6 @@
         android:id="@+id/mFragmentContainerLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/mTabLayout"
-        android:layout_below="@id/toolbar"/>
-
-    <include layout="@layout/base_toolbar" />
+        android:layout_above="@id/mTabLayout" />
 
 </RelativeLayout>

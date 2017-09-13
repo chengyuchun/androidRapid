@@ -3,13 +3,13 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/blue</item>
-        <item name="colorPrimaryDark">@color/blue</item>
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimaryDark">@color/white</item>
         <item name="android:textSize">@dimen/x26</item>
-        <item name="android:textColor">@color/title_txt</item>
+        <item name="android:textColor">@color/content_txt</item>
         <item name="android:windowBackground">@color/gray_bg</item>
         <item name="android:textColorHint">@color/gray_99</item>
-        <item name="colorAccent">@color/blue</item>
+        <item name="colorAccent">@color/white</item>
     </style>
 
     <style name="Theme.MaterialDesign" parent="Theme.AppCompat.Light.NoActionBar">
@@ -18,15 +18,6 @@
         <item name="colorAccent">@color/app_primary_color</item>
         <item name="android:textSize">@dimen/x30</item>
         <item name="android:windowBackground">@color/white</item>
-    </style>
-
-    <style name="ToolBarStyle" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="android:layout_width">match_parent</item>
-        <!--<item name="android:layout_height">?attr/actionBarSize</item>-->
-        <item name="android:layout_height">45dp</item>
-        <item name="android:minHeight">45dp</item>
-        <item name="android:background">@drawable/bk_up</item>
-        <item name="android:theme">@style/PopWindowStyle</item>
     </style>
 
     <style name="PopWindowStyle" parent="@style/ThemeOverlay.AppCompat.Dark.ActionBar">

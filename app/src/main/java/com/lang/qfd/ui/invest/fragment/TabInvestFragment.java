@@ -4,7 +4,6 @@ import android.support.v4.app.Fragment;
 
 import com.framework.fragment.BaseFragmentPresenter;
 import com.lang.core.ITabFragment;
-import com.lang.qfd.ui.demo.HomeActivity;
 import com.lang.qfd.ui.invest.adapter.ContactBean;
 import com.lang.qfd.ui.invest.delegate.TabInvestDelegate;
 
@@ -23,7 +22,6 @@ public class TabInvestFragment extends BaseFragmentPresenter<TabInvestDelegate> 
     @Override
     protected void bindEvenListener() {
         super.bindEvenListener();
-        ((HomeActivity)getActivity()).hiddenToolBar();
         viewDelegate.notifyListDataChange(getContacts());
     }
 
@@ -62,13 +60,6 @@ public class TabInvestFragment extends BaseFragmentPresenter<TabInvestDelegate> 
         };
         System.out.println("show...");
         return Arrays.asList(contactArray);
-    }
-
-    @Override
-    public void onHiddenChanged(boolean hidden) {
-        super.onHiddenChanged(hidden);
-        if(!hidden)
-            ((HomeActivity)getActivity()).hiddenToolBar();
     }
 
 }
