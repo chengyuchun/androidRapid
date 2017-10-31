@@ -5,6 +5,7 @@ import android.content.Context;
 import android.support.multidex.MultiDex;
 
 import com.lang.BuildConfig;
+import com.lang.utils.AppStatusTracker;
 import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;
 
@@ -17,7 +18,7 @@ public class CustomApplication extends Application {
         super.onCreate();
         mInstance = this;
         mContext = getApplicationContext();
-        //AppStatusTracker.init(this);
+        AppStatusTracker.init(this);
         mRefWatcher = BuildConfig.DEBUG ?  LeakCanary.install(this) : RefWatcher.DISABLED;
     }
 

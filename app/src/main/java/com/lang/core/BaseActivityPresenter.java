@@ -28,7 +28,13 @@ public abstract class BaseActivityPresenter <T extends IDelegate> extends BaseBa
 
             setStatusBarBlack();
         }
+        initVariables();
+        loadData();
     }
+
+    public abstract void initVariables();
+
+    public abstract void loadData();
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     private void setStatusBarBlack(){

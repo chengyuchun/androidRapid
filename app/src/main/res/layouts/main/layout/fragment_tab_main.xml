@@ -31,13 +31,13 @@
                     android:textSize="@dimen/x40"/>
                 <View
                     style="@style/Divider"/>
-                <com.lang.qfd.ui.main.view.ChoiceProductLinearLayout
+                <com.lang.xjd.ui.main.view.ChoiceProductLinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:clickable="true"
                     android:focusable="true"
                     android:focusableInTouchMode="true">
-                </com.lang.qfd.ui.main.view.ChoiceProductLinearLayout>
+                </com.lang.xjd.ui.main.view.ChoiceProductLinearLayout>
                 <com.lang.widgets.SimpleListItem
                     android:id="@+id/item_pwdAgain"
                     android:layout_width="match_parent"
@@ -48,31 +48,31 @@
                     item:contentText="查看全部产品"
                     item:arrowDisplay="true"
                     item:bottomLine="SOLID"/>
-                <com.lang.qfd.ui.main.view.ChoiceProductLinearLayout
+                <com.lang.xjd.ui.main.view.ChoiceProductLinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:clickable="true"
                     android:focusable="true"
                     android:focusableInTouchMode="true"/>
-                <com.lang.qfd.ui.main.view.ChoiceProductLinearLayout
+                <com.lang.xjd.ui.main.view.ChoiceProductLinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:clickable="true"
                     android:focusable="true"
                     android:focusableInTouchMode="true"/>
-                <com.lang.qfd.ui.main.view.ChoiceProductLinearLayout
+                <com.lang.xjd.ui.main.view.ChoiceProductLinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:clickable="true"
                     android:focusable="true"
                     android:focusableInTouchMode="true"/>
-                <com.lang.qfd.ui.main.view.ChoiceProductLinearLayout
+                <com.lang.xjd.ui.main.view.ChoiceProductLinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:clickable="true"
                     android:focusable="true"
                     android:focusableInTouchMode="true"/>
-                <com.lang.qfd.ui.main.view.ChoiceProductLinearLayout
+                <com.lang.xjd.ui.main.view.ChoiceProductLinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:clickable="true"

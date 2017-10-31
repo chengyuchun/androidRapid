@@ -93,7 +93,12 @@ public abstract class BaseListFragment<T extends BaseListDelegate> extends BaseF
         mPtrFrame.setPtrHandler(new PtrHandler() {
             @Override
             public boolean checkCanDoRefresh(PtrFrameLayout frame, View content, View header) {
-                return PtrDefaultHandler.checkContentCanBePulledDown(frame, content, header);
+                if(mRecyclerView.getLayoutManager() instanceof LinearLayoutManager
+                        && ((LinearLayoutManager)mRecyclerView.getLayoutManager()).findFirstCompletelyVisibleItemPosition()==0){
+                    return true;
+                }else {
+                    return false;
+                }
             }
 
             @Override
@@ -131,6 +136,7 @@ public abstract class BaseListFragment<T extends BaseListDelegate> extends BaseF
                 mAdapter.getDatas().addAll(datas) ;
             }
         }
+        isShowEmpty(datas.size());
         emptyWrapper.notifyDataSetChanged();
     }
 
@@ -168,6 +174,12 @@ public abstract class BaseListFragment<T extends BaseListDelegate> extends BaseF
         if(emptyWrapper!=null){
             emptyWrapper.setEmptyView(getEmptyView(e));
             emptyWrapper.notifyDataSetChanged();
+        }
+    }
+
+    public void isShowEmpty(int size){
+        if (mTotalPages == 1 && size == 0){
+            setEmptyView(null);
         }
     }
 

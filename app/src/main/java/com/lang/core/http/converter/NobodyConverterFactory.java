@@ -1,6 +1,6 @@
 package com.lang.core.http.converter;
 
-import com.lang.qfd.model.NoBodyModel;
+import com.lang.xjd.model.NoBodyModel;
 
 import java.io.IOException;
 import java.lang.annotation.Annotation;

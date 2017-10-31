@@ -101,7 +101,11 @@ public class BannerView extends RelativeLayout implements ViewPager.OnPageChange
 
         @Override
         public int getCount() {
-            return Short.MAX_VALUE;
+            if(banners.size()==1){
+                return 1;
+            }else {
+                return Short.MAX_VALUE;
+            }
         }
 
         @Override
@@ -114,9 +118,12 @@ public class BannerView extends RelativeLayout implements ViewPager.OnPageChange
             final int index = position % banners.size();
             final Banner banner = banners.get(index);
             final ImageView imageView = new ImageView(getContext());
-            //imageView.setImageResource(banner.resId);
+            if(banner.resId > 0){
+                imageView.setBackgroundResource(banner.resId);
+            }else{
+                GlideUtil.displayImg(imageView,banner.url);
+            }
             //GlideUtil.displayImg(imageView,"https:"+banner.url);
-            GlideUtil.displayImg(imageView,banner.url);
             imageView.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {

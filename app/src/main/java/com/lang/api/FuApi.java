@@ -1,7 +1,7 @@
 package com.lang.api;
 
-import com.lang.qfd.model.BaseModel;
-import com.lang.qfd.model.Benefit;
+import com.lang.xjd.model.BaseModel;
+import com.lang.xjd.model.Benefit;
 
 import java.util.ArrayList;
 

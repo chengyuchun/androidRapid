@@ -1,13 +1,13 @@
 package com.lang.widgets;
 
 import android.content.Context;
+import android.support.v4.widget.NestedScrollView;
 import android.util.AttributeSet;
-import android.widget.ScrollView;
 
 /**
  * Created by chengyuchun on 2016/11/4.
  */
-public class CustomScrollView extends ScrollView {
+public class CustomScrollView extends NestedScrollView {
     private ScrollViewListener scrollViewListener = null;
     public CustomScrollView(Context context) {
         super(context);
