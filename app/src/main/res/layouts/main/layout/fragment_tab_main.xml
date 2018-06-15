@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <com.lang.widgets.CustomScrollView
+        <com.nuwa.widgets.CustomScrollView
             android:id="@+id/mScrollView"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -19,7 +19,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
-                <com.lang.widgets.banner.BannerView
+                <com.nuwa.widgets.banner.BannerView
                     android:id="@+id/mBannerView"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/y400" />
@@ -31,14 +31,14 @@
                     android:textSize="@dimen/x40"/>
                 <View
                     style="@style/Divider"/>
-                <com.lang.xjd.ui.main.view.ChoiceProductLinearLayout
+                <com.nuwa.ui.main.view.ChoiceProductLinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:clickable="true"
                     android:focusable="true"
                     android:focusableInTouchMode="true">
-                </com.lang.xjd.ui.main.view.ChoiceProductLinearLayout>
-                <com.lang.widgets.SimpleListItem
+                </com.nuwa.ui.main.view.ChoiceProductLinearLayout>
+                <com.nuwa.widgets.SimpleListItem
                     android:id="@+id/item_pwdAgain"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -48,31 +48,31 @@
                     item:contentText="查看全部产品"
                     item:arrowDisplay="true"
                     item:bottomLine="SOLID"/>
-                <com.lang.xjd.ui.main.view.ChoiceProductLinearLayout
+                <com.nuwa.ui.main.view.ChoiceProductLinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:clickable="true"
                     android:focusable="true"
                     android:focusableInTouchMode="true"/>
-                <com.lang.xjd.ui.main.view.ChoiceProductLinearLayout
+                <com.nuwa.ui.main.view.ChoiceProductLinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:clickable="true"
                     android:focusable="true"
                     android:focusableInTouchMode="true"/>
-                <com.lang.xjd.ui.main.view.ChoiceProductLinearLayout
+                <com.nuwa.ui.main.view.ChoiceProductLinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:clickable="true"
                     android:focusable="true"
                     android:focusableInTouchMode="true"/>
-                <com.lang.xjd.ui.main.view.ChoiceProductLinearLayout
+                <com.nuwa.ui.main.view.ChoiceProductLinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:clickable="true"
                     android:focusable="true"
                     android:focusableInTouchMode="true"/>
-                <com.lang.xjd.ui.main.view.ChoiceProductLinearLayout
+                <com.nuwa.ui.main.view.ChoiceProductLinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:clickable="true"
@@ -95,7 +95,7 @@
                     android:background="@color/red_light"/>
 
             </LinearLayout>
-        </com.lang.widgets.CustomScrollView>
+        </com.nuwa.widgets.CustomScrollView>
     </com.framework.widget.PtrlMeiTuanFrameLayout>
     <LinearLayout
         android:id="@+id/ll_bar"

@@ -3,7 +3,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.lang.widgets.tab.TabLayout
+    <com.nuwa.widgets.tab.TabLayout
         android:id="@+id/mTabLayout"
         android:padding="3dp"
         android:layout_width="match_parent"

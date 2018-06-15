@@ -49,7 +49,7 @@
         <!--android:layout_width="match_parent"-->
         <!--android:layout_height="match_parent"-->
         <!--&gt;-->
-        <com.lang.widgets.StickyNavLayout
+        <com.nuwa.widgets.StickyNavLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <RelativeLayout
@@ -66,15 +66,15 @@
                     android:textStyle="bold" />
             </RelativeLayout>
 
-            <com.lang.widgets.PinnedHeaderListView
+            <com.nuwa.widgets.PinnedHeaderListView
                 android:id="@+id/contact_listview"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scrollbars="none">
 
-            </com.lang.widgets.PinnedHeaderListView>
+            </com.nuwa.widgets.PinnedHeaderListView>
 
-        </com.lang.widgets.StickyNavLayout>
+        </com.nuwa.widgets.StickyNavLayout>
     <!--</android.support.v4.widget.SwipeRefreshLayout>-->
 
 </LinearLayout>
